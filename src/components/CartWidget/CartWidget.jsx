@@ -1,8 +1,12 @@
 import React from 'react'
+import cart from './assets/cart.svg'
 
 const CartWidget = () => {
   return (
-    <div>CartWidget</div>
+    <div>
+      <img src= {cart} alt="Cart" />
+      5
+    </div>
   )
 }
 
