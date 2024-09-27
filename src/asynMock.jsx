@@ -3,7 +3,7 @@ const products = [
         id:'1',
         name: 'Coca Cola 3L',
         price: 2500,
-        category:'Gaseosa',
+        category:'Gaseosas',
         img: '',
         stock: 30,
         description: 'Gaseosa sabor Cola de 3 Litros'
@@ -12,7 +12,7 @@ const products = [
         id:'2',
         name: 'Quilmes Clasica 473cc',
         price: 1000,
-        category:'Cerveza',
+        category:'Cervezas',
         img: '',
         stock: 48,
         description: 'Cerveza Rubia Quilmes Clasico de 473cc'
@@ -44,11 +44,11 @@ export const getProductsById = (productId) => {
     })
 }
 
-export const getProductsByCategory = (products, categoryId) => {
+export const getProductsByCategory = (categoryId) => {
     return new Promise((resolve) => {
         setTimeout(() => {
             // Filtra los productos que coinciden con la categoría
-            const filteredProducts = products.filter(product => product.categoryId === categoryId);
+            const filteredProducts = products.filter(product => product.category === categoryId);
             resolve(filteredProducts);
         }, 500);
     });
