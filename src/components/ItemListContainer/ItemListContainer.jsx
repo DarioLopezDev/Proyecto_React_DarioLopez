@@ -1,12 +1,11 @@
 import './ItemListContainer.css'
 
 import {useState,useEffect} from 'react'
-/* import {getProducts, getProductsByCategory} from '../../asynMock' */
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 
 import {getDocs, collection, query, where} from 'firebase/firestore'
-import {db} from "src\services\firebase\firebaseConfig.js"
+import {db} from '../../services/firebase/firebaseConfig.js'
 
 const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState ([])
