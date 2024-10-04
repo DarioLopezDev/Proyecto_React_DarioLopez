@@ -10,9 +10,9 @@ import {db} from '../../services/firebase/firebaseConfig.js'
 const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState ([])
 
-  const {loading, setLoading} = useState(true)
+  const [loading, setLoading] = useState(true)
 
-  const { categoryId } = useParams()
+  const {categoryId} = useParams()
 
   useEffect (() => {
     setLoading(true)
@@ -35,6 +35,7 @@ const ItemListContainer = ({greeting}) => {
       .finally(() => {
         setLoading(false)
       })
+    },[categoryId])
 
   return (
     <div>
@@ -42,8 +43,6 @@ const ItemListContainer = ({greeting}) => {
       <ItemList products={products}/>
     </div>
   )
-}
-)
 }
 
 export default ItemListContainer

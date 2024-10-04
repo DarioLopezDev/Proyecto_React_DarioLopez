@@ -1,5 +1,6 @@
 import './Checkout.css'
 import { useState, useContext } from 'react'
+import {CartContext} from '../../context/CartContext.jsx'
 import {getDocs, collection, query, where, writeBatch, addDoc, documentId, Timestamp} from 'firebase/firestore'
 import {db} from '../../services/firebase/firebaseConfig.js'
 
