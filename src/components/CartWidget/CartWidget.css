@@ -1,0 +1,30 @@
+.CartWidget {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Elimina el subrayado */
+    color: white; /* Color del texto */
+    position: relative; /* Para posicionar el número de items */
+    margin-left: auto; /* Alinear a la derecha */
+}
+
+.CartImg {
+    width: 30px; /* Ajusta el tamaño del ícono del carrito */
+    height: auto; /* Mantiene la proporción del ícono */
+    margin-right: 5px; /* Espacio entre el ícono y el número */
+}
+
+.CartWidget::after {
+    content: attr(data-quantity); /* Utiliza el atributo data-quantity */
+    position: absolute;
+    top: -5px; /* Ajusta según sea necesario */
+    right: -10px; /* Ajusta según sea necesario */
+    background-color: red; /* Fondo rojo para el contador */
+    color: white; /* Color del texto del contador */
+    border-radius: 50%; /* Bordes redondeados para que parezca un círculo */
+    width: 20px; /* Ancho del contador */
+    height: 20px; /* Alto del contador */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem; /* Tamaño del texto del contador */
+}

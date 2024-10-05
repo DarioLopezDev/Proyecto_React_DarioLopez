@@ -8,7 +8,7 @@ import {getDocs, collection, query, where} from 'firebase/firestore'
 import {db} from '../../services/firebase/firebaseConfig.js'
 
 const ItemListContainer = ({greeting}) => {
-  const [products, setProducts] = useState ([])
+  const [Productos, setProductos] = useState ([])
 
   const [loading, setLoading] = useState(true)
 
@@ -18,8 +18,8 @@ const ItemListContainer = ({greeting}) => {
     setLoading(true)
 
     const collectionRef = categoryId
-      ? query(collection(db,'products'), where('category', '==', categoryId))
-      : collection (db, 'products')
+      ? query(collection(db,'Productos'), where('category', '==', categoryId))
+      : collection (db, 'Productos')
 
     getDocs(collectionRef)
       .then(response => {
@@ -27,7 +27,7 @@ const ItemListContainer = ({greeting}) => {
           const data = doc.data()
           return {id: doc.id, ...data }
         })
-        setProducts(productsAdapted)
+        setProductos(productsAdapted)
       })
       .catch(error => {
         console.log(error)
@@ -40,7 +40,7 @@ const ItemListContainer = ({greeting}) => {
   return (
     <div>
       <h1>{greeting}</h1>
-      <ItemList products={products}/>
+      {loading ? <h3>Loading...</h3> :<ItemList Productos={Productos}/>}
     </div>
   )
 }
